@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Gejje's Marvella — Business Profiles">
+  <title>Gejje's Marvella — Business Profiles</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Fluid background blobs -->
+  <div class="glass-blobs" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <!-- Skeleton loader -->
+  <div class="skeleton-wrap" id="skeleton" aria-hidden="true">
+    <div class="sk-hero">
+      <div class="sk-avatar"></div>
+      <div class="sk-line sk-wide"></div>
+    </div>
+    <div class="sk-cards">
+      <div class="sk-card"></div>
+      <div class="sk-card"></div>
+      <div class="sk-card"></div>
+      <div class="sk-card"></div>
+    </div>
+  </div>
+
+  <!-- App -->
+  <main class="app" id="app" hidden>
+
+    <!-- Hero -->
+    <header class="hero">
+      <div class="hero-inner">
+        <div class="logo-wrap">
+          <span class="logo-glow" aria-hidden="true"></span>
+          <img class="clinic-logo" src="https://gejjesmarvella.github.io/-social-hub/assets/logo.png"
+               alt="Gejje's Marvella">
+        </div>
+        <div class="hero-text">
+          <h1 class="clinic-name">Gejje's Marvella</h1>
+          <p class="clinic-quote">“Your feedback helps us continuously improve our care and lets other families know what to expect.”</p>
+          <div class="hero-divider" aria-hidden="true"><span class="divider-dot"></span></div>
+          <p class="clinic-subtitle"><i class="fas fa-circle"></i> Our Business Profiles</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- Business Profiles -->
+    <section aria-label="Business Profiles">
+      <h2 class="section-heading">Google Business Profiles</h2>
+      <div class="links-grid">
+
+        <a class="link-card" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&amp;query=Gejjes+Marvella+Basavanagudi+Bengaluru"
+           style="--card-accent:#34A853; --card-accent-alpha:rgba(52,168,83,.25)">
+          <span class="card-icon-box"><i class="fa-brands fa-google" style="color:#4285F4"></i></span>
+          <span class="card-content">
+            <span class="card-title">Gejje's Marvella – Bengaluru</span>
+            <span class="card-desc">View on Google Maps</span>
+          </span>
+          <i class="fas fa-arrow-right card-arrow"></i>
+        </a>
+
+        <a class="link-card" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&amp;query=Gejjes+Marvella+657+Gandhi+Colony+Hosapete"
+           style="--card-accent:#34A853; --card-accent-alpha:rgba(52,168,83,.25)">
+          <span class="card-icon-box"><i class="fa-brands fa-google" style="color:#4285F4"></i></span>
+          <span class="card-content">
+            <span class="card-title">Gejje's Marvella – Hospet Branch</span>
+            <span class="card-desc">View on Google Maps</span>
+          </span>
+          <i class="fas fa-arrow-right card-arrow"></i>
+        </a>
+
+        <a class="link-card" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&amp;query=Dr+Somashekar+Gejje+Jindal+Sanjeevani+Multispeciality+Hospital"
+           style="--card-accent:#34A853; --card-accent-alpha:rgba(52,168,83,.25)">
+          <span class="card-icon-box"><i class="fa-brands fa-google" style="color:#4285F4"></i></span>
+          <span class="card-content">
+            <span class="card-title">Dr. Somashekar Gejje – Jindal Sanjeevani Multispeciality Hospital</span>
+            <span class="card-desc">View on Google Maps</span>
+          </span>
+          <i class="fas fa-arrow-right card-arrow"></i>
+        </a>
+
+        <a class="link-card" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&amp;query=Dr+Amrita+Hongal+Gejje+National+College+Bengaluru"
+           style="--card-accent:#34A853; --card-accent-alpha:rgba(52,168,83,.25)">
+          <span class="card-icon-box"><i class="fa-brands fa-google" style="color:#4285F4"></i></span>
+          <span class="card-content">
+            <span class="card-title">Dr. Amrita Hongal – Bengaluru (Near National College)</span>
+            <span class="card-desc">View on Google Maps</span>
+          </span>
+          <i class="fas fa-arrow-right card-arrow"></i>
+        </a>
+
+        <a class="link-card" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&amp;query=Dr+Somashekar+Gejje+Bangalore+Superspecialty+Center"
+           style="--card-accent:#34A853; --card-accent-alpha:rgba(52,168,83,.25)">
+          <span class="card-icon-box"><i class="fa-brands fa-google" style="color:#4285F4"></i></span>
+          <span class="card-content">
+            <span class="card-title">Dr. Somashekar Gejje – Bangalore Superspecialty Center</span>
+            <span class="card-desc">View on Google Maps</span>
+          </span>
+          <i class="fas fa-arrow-right card-arrow"></i>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <i class="fas fa-heart footer-logo-small" aria-hidden="true"></i>
+      <p class="footer-brand">© <span id="year"></span> Gejje's Marvella</p>
+      <p class="footer-sub">Official Business Profiles</p>
+      <p class="footer-powered">made with <span style="color:#EA4335">♥</span></p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

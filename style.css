@@ -1,0 +1,626 @@
+/* ═══════════════════════════════════════════════════════════════════
+Gejje's Marvella — Business Profiles
+style.css | Apple Liquid Glass Premium Theme (Day & Night Modes)
+═══════════════════════════════════════════════════════════════════ */
+
+/* ── 1. Design Tokens (Day Mode — Light Frost Glass) ────────────── */
+:root {
+  --clr-primary: #1E6F5C;
+  --clr-primary-light: #2A9D80;
+  --clr-primary-dark: #155244;
+  --clr-secondary: #D4A843;
+
+  --font-display: 'Playfair Display', serif;
+  --font-ui: 'Inter', system-ui, -apple-system, sans-serif;
+
+  --bg-blobs-radial: radial-gradient(circle at 50% 50%, #F5F7FA 0%, #E2E6EE 100%);
+  --blob-1-color: #DBC7FF;
+  --blob-2-color: #B9D7FF;
+  --blob-3-color: #B2F5EA;
+  --blob-opacity: 0.6;
+  --blob-blend-mode: normal;
+
+  --bg-body: #E8ECF5;
+  --bg-card: rgba(255, 255, 255, 0.15);
+  --bg-card-hover: rgba(255, 255, 255, 0.28);
+  --bg-glass: rgba(255, 255, 255, 0.12);
+  --bg-skeleton: rgba(0, 0, 0, 0.03);
+  --bg-skeleton-glow: rgba(255, 255, 255, 0.2);
+
+  --border-card: 1px solid rgba(255, 255, 255, 0.45);
+  --border-card-hover: 1px solid rgba(255, 255, 255, 0.7);
+
+  --card-reflection: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.6) 0%, transparent 60%);
+
+  --txt-primary: #1E293B;
+  --txt-secondary: rgba(30, 41, 59, 0.75);
+  --txt-muted: rgba(30, 41, 59, 0.5);
+
+  --bg-clinic-logo: rgba(255, 255, 255, 0.25);
+  --gradient-brand: linear-gradient(135deg, #1E293B 0%, #475569 100%);
+
+  --bg-icon-box: rgba(255, 255, 255, 0.2);
+  --border-icon-box: 1px solid rgba(255, 255, 255, 0.4);
+  --shadow-icon-box: inset 0 1px 1px rgba(255, 255, 255, 0.5);
+
+  --t-spring: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --t-base: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --t-slow: 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+
+  --r-sm: 8px;
+  --r-md: 14px;
+  --r-lg: 20px;
+  --r-xl: 24px;
+  --r-full: 9999px;
+
+  --shadow-sm: 0 2px 8px rgba(31, 38, 135, 0.03);
+  --shadow-md: 0 8px 32px 0 rgba(31, 38, 135, 0.06);
+  --shadow-card: 0 8px 24px 0 rgba(31, 38, 135, 0.04), inset 0 1px 1px rgba(255, 255, 255, 0.6);
+  --shadow-hover: 0 16px 32px rgba(31, 38, 135, 0.08), inset 0 1px 2px rgba(255, 255, 255, 0.8);
+
+  --sp-xs: 0.5rem;
+  --sp-sm: 0.75rem;
+  --sp-md: 1rem;
+  --sp-lg: 1.25rem;
+  --sp-xl: 2rem;
+  --sp-2xl: 3rem;
+}
+
+/* ── 2. Design Tokens (Night Mode — Obsidian Glass) ─────────────── */
+html.dark {
+  --clr-primary: #2A9D80;
+  --clr-primary-light: #34BE9E;
+  --clr-primary-dark: #1E6F5C;
+  --clr-secondary: #D4A843;
+
+  --bg-blobs-radial: radial-gradient(circle at 50% 50%, #0A0F1D 0%, #030508 100%);
+  --blob-1-color: #5A169A;
+  --blob-2-color: #0D3CA1;
+  --blob-3-color: #006A5C;
+  --blob-opacity: 0.22;
+  --blob-blend-mode: screen;
+
+  --bg-body: #05070A;
+  --bg-card: rgba(255, 255, 255, 0.035);
+  --bg-card-hover: rgba(255, 255, 255, 0.065);
+  --bg-glass: rgba(255, 255, 255, 0.03);
+  --bg-skeleton: rgba(255, 255, 255, 0.05);
+  --bg-skeleton-glow: rgba(255, 255, 255, 0.04);
+
+  --border-card: 1px solid rgba(255, 255, 255, 0.12);
+  --border-card-hover: 1px solid rgba(255, 255, 255, 0.22);
+
+  --card-reflection: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.08) 0%, transparent 60%);
+
+  --txt-primary: #FFFFFF;
+  --txt-secondary: rgba(255, 255, 255, 0.65);
+  --txt-muted: rgba(255, 255, 255, 0.45);
+
+  --bg-clinic-logo: rgba(255, 255, 255, 0.04);
+  --gradient-brand: linear-gradient(135deg, #FFFFFF 0%, rgba(255, 255, 255, 0.7) 100%);
+
+  --bg-icon-box: rgba(255, 255, 255, 0.04);
+  --border-icon-box: 1px solid rgba(255, 255, 255, 0.08);
+  --shadow-icon-box: inset 0 1px 1px rgba(255, 255, 255, 0.05);
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  --shadow-card: 0 8px 32px 0 rgba(0, 0, 0, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.05);
+  --shadow-hover: 0 16px 40px rgba(0, 0, 0, 0.5), inset 0 1px 2px rgba(255, 255, 255, 0.15);
+}
+
+/* ── 3. Reset & Base Layout ─────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-ui);
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--txt-primary);
+  background: var(--bg-body);
+  min-height: 100vh;
+  min-height: 100dvh;
+  transition: background var(--t-slow), color var(--t-slow);
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a, button, .link-card {
+  color: inherit;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+button { cursor: pointer; font-family: inherit; border: none; background: none; }
+
+/* ── 4. Fluid Background Blobs ──────────────────────────────────── */
+.glass-blobs {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  z-index: -2;
+  overflow: hidden;
+  pointer-events: none;
+  background: var(--bg-blobs-radial);
+  transition: background var(--t-slow);
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: var(--blob-opacity);
+  mix-blend-mode: var(--blob-blend-mode);
+  animation: fluid-drift 22s infinite alternate ease-in-out;
+  transition: background var(--t-slow), opacity var(--t-slow);
+}
+
+.blob-1 { width: 350px; height: 350px; background: var(--blob-1-color); top: -10%; left: -5%; animation-duration: 25s; }
+.blob-2 { width: 450px; height: 450px; background: var(--blob-2-color); bottom: -10%; right: -5%; animation-duration: 32s; }
+.blob-3 { width: 250px; height: 250px; background: var(--blob-3-color); top: 45%; left: 40%; animation-duration: 18s; }
+
+@keyframes fluid-drift {
+  0%   { transform: translate(0, 0) scale(1); }
+  50%  { transform: translate(40px, -20px) scale(1.08); }
+  100% { transform: translate(-20px, 30px) scale(0.92); }
+}
+
+/* ── 5. Accessibility ───────────────────────────────────────────── */
+:focus-visible {
+  outline: 2.5px solid var(--clr-primary);
+  outline-offset: 3px;
+  border-radius: var(--r-sm);
+}
+
+/* ── 6. Skeleton Loader ─────────────────────────────────────────── */
+.skeleton-wrap {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: var(--sp-xl) var(--sp-lg);
+}
+
+.sk-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-md);
+  margin-bottom: var(--sp-2xl);
+}
+
+.sk-avatar {
+  width: 100px; height: 100px;
+  border-radius: var(--r-full);
+  background: var(--bg-skeleton);
+}
+
+.sk-line {
+  height: 14px;
+  border-radius: var(--r-full);
+  background: var(--bg-skeleton);
+}
+
+.sk-wide   { width: 60%; }
+.sk-narrow { width: 40%; }
+
+.sk-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-sm);
+}
+
+.sk-card {
+  height: 72px;
+  border-radius: var(--r-lg);
+  background: var(--bg-skeleton);
+}
+
+@keyframes shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+.sk-avatar, .sk-line, .sk-card {
+  background-image: linear-gradient(
+    90deg,
+    var(--bg-skeleton) 0%,
+    var(--bg-skeleton-glow) 50%,
+    var(--bg-skeleton) 100%
+  );
+  background-size: 800px 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+/* ── 8. App Container Layout ────────────────────────────────────── */
+.app {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: var(--sp-xl) var(--sp-md) var(--sp-2xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-xl);
+}
+
+.app[hidden] { display: none !important; }
+
+/* ── 9. Hero Section ────────────────────────────────────────────── */
+.hero { padding-top: var(--sp-xl); position: relative; }
+
+.hero-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--sp-lg);
+  animation: fade-up 0.5s ease both;
+}
+
+.logo-wrap { position: relative; display: inline-block; }
+
+.logo-glow {
+  position: absolute;
+  inset: -12px;
+  border-radius: var(--r-full);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
+  animation: logo-pulse 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes logo-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50%      { transform: scale(1.05); opacity: 1; }
+}
+
+.clinic-logo {
+  width: 130px;
+  height: 130px;
+  object-fit: contain;
+  border-radius: var(--r-xl);
+  background: var(--bg-clinic-logo);
+  border: var(--border-card);
+  padding: 0.6rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--t-spring), background var(--t-base), border-color var(--t-base);
+  position: relative;
+  z-index: 1;
+}
+
+.clinic-logo:hover { transform: scale(1.03); }
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-xs);
+}
+
+.clinic-name {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 6vw, 2.3rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: background var(--t-slow);
+}
+
+.clinic-quote {
+  max-width: 320px;
+  font-size: 0.8rem;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--txt-secondary);
+  opacity: 0.9;
+}
+
+.hero-divider {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-sm);
+  margin: var(--sp-xs) 0;
+  width: 100%;
+  justify-content: center;
+}
+
+.hero-divider::before,
+.hero-divider::after {
+  content: '';
+  flex: 1;
+  max-width: 40px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+}
+
+.divider-dot {
+  width: 5px; height: 5px;
+  border-radius: var(--r-full);
+  background: var(--txt-muted);
+  display: inline-block;
+}
+
+.clinic-subtitle {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-sm);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--txt-secondary);
+}
+
+.clinic-subtitle i { font-size: 0.55rem; color: var(--clr-secondary); }
+
+/* ── 10. Section Headings ───────────────────────────────────────── */
+.section-heading {
+  font-family: var(--font-ui);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--txt-secondary);
+  text-align: center;
+  margin-bottom: var(--sp-md);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-md);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.section-heading::before,
+.section-heading::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* ── 11. Links Grid ─────────────────────────────────────────────── */
+.links-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-sm);
+}
+
+/* ── 12. Liquid Glass Link Cards ────────────────────────────────── */
+.link-card {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-md);
+  padding: var(--sp-md) var(--sp-lg);
+  background: var(--bg-card);
+  border: var(--border-card);
+  border-radius: var(--r-xl);
+  box-shadow: var(--shadow-card);
+  color: var(--txt-primary);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition:
+    transform var(--t-spring),
+    box-shadow var(--t-base),
+    border var(--t-base),
+    background var(--t-base);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+.link-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--card-reflection);
+  pointer-events: none;
+  z-index: 1;
+  transition: opacity var(--t-base);
+}
+
+.link-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 0.4s ease both,
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1) both,
+    box-shadow var(--t-base),
+    border var(--t-base),
+    background var(--t-base);
+}
+
+.link-card:hover {
+  transform: translateY(-3px) scale(1.015);
+  box-shadow: var(--shadow-hover), 0 0 15px var(--card-accent-alpha);
+  border-color: var(--card-accent);
+  background: var(--bg-card-hover);
+}
+
+.link-card:active {
+  transform: translateY(-1px) scale(0.985);
+  box-shadow: var(--shadow-card);
+}
+
+.card-icon-box {
+  width: 44px; height: 44px;
+  border-radius: var(--r-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: var(--bg-icon-box);
+  border: var(--border-icon-box);
+  box-shadow: var(--shadow-icon-box);
+  font-size: 1.2rem;
+  transition: transform var(--t-spring), background var(--t-base), border-color var(--t-base);
+  z-index: 2;
+}
+
+.link-card:hover .card-icon-box {
+  transform: scale(1.08) rotate(-3deg);
+  background: var(--bg-card-hover);
+  border-color: var(--card-accent);
+}
+
+.card-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  z-index: 2;
+}
+
+.card-title {
+  display: block;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--txt-primary);
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color var(--t-slow);
+}
+
+.card-desc {
+  display: block;
+  font-size: 0.76rem;
+  color: var(--txt-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color var(--t-slow);
+}
+
+.card-arrow {
+  color: var(--txt-muted);
+  font-size: 0.8rem;
+  flex-shrink: 0;
+  transition: transform var(--t-base), color var(--t-base);
+  z-index: 2;
+}
+
+.link-card:hover .card-arrow { transform: translateX(4px); color: var(--txt-primary); }
+
+/* ── 13. Ripple Effect ──────────────────────────────────────────── */
+@keyframes ripple-expand {
+  from { transform: scale(0); opacity: 0.25; }
+  to   { transform: scale(3); opacity: 0; }
+}
+
+.ripple {
+  position: absolute;
+  border-radius: var(--r-full);
+  background: rgba(255, 255, 255, 0.25);
+  pointer-events: none;
+  transform: scale(0);
+  animation: ripple-expand 0.55s ease-out forwards;
+  z-index: 5;
+}
+
+/* ── 14. Footer ─────────────────────────────────────────────────── */
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: var(--sp-lg) 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
+  transition: border var(--t-slow);
+}
+
+.footer-logo-small {
+  font-size: 1.4rem;
+  color: var(--clr-primary);
+  opacity: 0.7;
+  margin-bottom: var(--sp-xs);
+}
+
+.footer-brand {
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--txt-secondary);
+  transition: color var(--t-slow);
+}
+
+.footer-sub {
+  font-size: 0.72rem;
+  color: var(--txt-muted);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: color var(--t-slow);
+}
+
+.footer-powered {
+  font-size: 0.7rem;
+  color: var(--txt-muted);
+  margin-top: 4px;
+  transition: color var(--t-slow);
+}
+
+/* ── 15. Animations ─────────────────────────────────────────────── */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── 16. Responsive Overrides ───────────────────────────────────── */
+@media (min-width: 520px) {
+  .links-grid { grid-template-columns: 1fr 1fr; }
+
+  .link-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: var(--sp-lg) var(--sp-md);
+    gap: var(--sp-sm);
+  }
+
+  .card-icon-box {
+    width: 52px; height: 52px;
+    font-size: 1.4rem;
+    border-radius: var(--r-md);
+  }
+
+  .card-content { min-width: unset; }
+  .card-title  { white-space: normal; overflow: visible; }
+  .card-desc   { white-space: normal; overflow: visible; }
+  .card-arrow  { display: none; }
+}
+
+@media (min-width: 640px) {
+  .app { padding: var(--sp-xl) var(--sp-xl) var(--sp-2xl); }
+}
+
+/* ── 17. Reduced Motion ─────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .link-card.visible {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .logo-glow { animation: none !important; }
+  .blob { animation: none !important; }
+}
+
+/* ── 18. Print ──────────────────────────────────────────────────── */
+@media print {
+  .glass-blobs { display: none; }
+  body { background: white; color: black; }
+  .link-card { background: white; border: 1px solid #ccc; color: black; }
+}
